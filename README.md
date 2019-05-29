@@ -19,7 +19,7 @@ An entity relationship diagram, which depicts the tables and their relationship 
 
 #### Setup
 
-## setup backend
+##### setup backend
 $ cd britecore/
 $ virtualenv  venv
 $ source venv/bin/activate
@@ -33,26 +33,26 @@ $ python manage.py runserver
 ''' To run test'''
 $ python manage.py test
 
-## setup frontend
+##### setup frontend
 
 cd my-vue-app
 
-# install dependencies
+###### install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+###### serve with hot reload at localhost:8080
 npm start
 
-# build for production with minification
+###### build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
+###### build for production and view the bundle analyzer report
 npm run build --report
 
-# To access front end
+###### To access front end
 http://localhost:8080
 
-## Development approach
+###### Development approach
 
 * Handle all requests by axios interceptors
 * JWT based authentication
