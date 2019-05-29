@@ -1,0 +1,4 @@
+import cryptography.fernet
+f = cryptography.fernet.Fernet('TluxwB3fV_GWuLkR1_BzGs1Zk90TYAuhNMZP_0q4WyM=')
+message = b'gAAAAABc7WHM9T5vJ0LGBeMRin6lud4SMYakc_OlOUXRu159dLsqV-YgN8DFNPD6Iydg7AQPQnLEK91y6AsaycWvxM1ymJGdN10JWIpu6eOLZLymZx5eYqJ99Jz0EqdSrl4rb51UtgGflVrLYDF0PUbijLKANQOuHwMYTiiIqkEGfPlh6YmJLds='
+print(f.decrypt(message))
