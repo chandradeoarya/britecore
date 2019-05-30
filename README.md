@@ -52,7 +52,7 @@ npm run build --report
 ###### To access front end
 http://localhost:8080
 
-###### Development approach
+##### Development approach
 
 * Handle all requests by axios interceptors
 * JWT based authentication
@@ -63,6 +63,3 @@ http://localhost:8080
 * API support login, create, update, delete Risk
 * API support CRUD functionality create, update, delete Fields
 * API support types text, date, enum, number to a specific risk.
-
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -13,7 +13,7 @@
             <li><router-link class="item" to="/">Home</router-link></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" v-if="token">
-            <li><router-link class="item" to="logout">Log out</router-link></li>
+            <li><router-link class="item" to="/logout">Log out</router-link></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" v-else>
             <li><router-link class="item" to="login">Login</router-link></li>
@@ -28,6 +28,9 @@
       </div>
     </nav>
     <router-view/>
+    <div class="footer">
+      <p>Made for Britecore</p>
+    </div>
   </div>
 </template>
 
@@ -58,5 +61,15 @@ export default {
   color: black;
   font-weight: bold;
 }
-
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2%;
+  font-weight: bold;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+}
 </style>
