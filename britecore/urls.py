@@ -5,6 +5,14 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 
+import os
+from django.conf import settings
+from django.conf.urls.static import static
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_DIR = BASE_DIR+'/frontend/dist/static/'
+PATH = '/static/'
+print TEMPLATE_DIR
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -14,7 +22,7 @@ urlpatterns = [
     url(r'^api-token-auth/', obtain_jwt_token),
     url(r'^api-token-refresh/', refresh_jwt_token),
     url(r'^api-token-verify/', verify_jwt_token),
-]
+]+ static(PATH, document_root=TEMPLATE_DIR)
 
 
 urlpatterns = format_suffix_patterns(urlpatterns)

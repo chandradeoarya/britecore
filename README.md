@@ -20,6 +20,7 @@ An entity relationship diagram, which depicts the tables and their relationship 
 #### Setup
 
 ##### setup backend
+
 $ cd britecore/
 $ virtualenv  venv
 $ source venv/bin/activate
@@ -28,9 +29,6 @@ $ python manage.py makemigrations profiles risks
 $ python manage.py migrate
 $ python manage.py createsuperuser
 $ python manage.py runserver
-'''application runs at localhost:8000'''
-
-''' To run test'''
 $ python manage.py test
 
 ##### setup frontend
