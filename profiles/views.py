@@ -22,20 +22,3 @@ def api_root(request, format=None):
         #render(request, 'index.html')
         loader.get_template('index.html').render()
     })
-
-
-class UserList(generics.ListCreateAPIView):
-    permission_classes = (AllowAny,)
-
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    def perform_create(self, serializer):
-        password = make_password(self.request.data['password'])
-        serializer.save(password=password)
-
-
-class UserDetail(generics.RetrieveAPIView):
-    permission_classes = (IsOwnerOrReadOnly,)
-
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
