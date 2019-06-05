@@ -14,7 +14,7 @@
 - [Introduction](#introduction)
 - [Features](#features)
 - [Setup](#setup)
-- [Build and Deployment](#buildanddeployment)
+- [Build and Deployment](#build-and-deployment)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -115,7 +115,7 @@ npm start
 npm run build
 ```
 
-## Build and Deployment
+## Build-and-Deployment
 
 The project has been built and deployed at [Britecore flexy insurance](http://ec2-18-191-84-229.us-east-2.compute.amazonaws.com).
 
