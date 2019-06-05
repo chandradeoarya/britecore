@@ -1,12 +1,17 @@
 <h1 align="center"> Britecore Flexy Insurance </h1> <br>
 <p align="center">
   <a href="https://britecore.com">
-    <img alt="Britecore" title="GitPoint" src="https://media.licdn.com/dms/image/C4E0BAQH0HMMwXpG7Ug/company-logo_200_200/0?e=2159024400&v=beta&t=rHvpqMtfnZLW7C1DpG8vMHntAy6n4x0tGyGb6lLcA80" width="200">
+    <img alt="Britecore" title="britecore" src="https://media.licdn.com/dms/image/C4E0BAQH0HMMwXpG7Ug/company-logo_200_200/0?e=2159024400&v=beta&t=rHvpqMtfnZLW7C1DpG8vMHntAy6n4x0tGyGb6lLcA80" width="200">
   </a>
 </p>
 
 <p align="center">
-  [Britecore flexy insurance for any kind of data model] (http://ec2-18-191-84-229.us-east-2.compute.amazonaws.com/)
+  Britecore flexy insurance for any kind of data model
+</p>
+
+<p align="center">
+ <a href="http://ec2-18-191-84-229.us-east-2.compute.amazonaws.com" />
+  Live demo
 </p>
 
 ## Table of Contents
