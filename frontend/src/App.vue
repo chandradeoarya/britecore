@@ -29,7 +29,7 @@
     </nav>
     <router-view/>
     <div class="footer">
-      <p>Made for Britecore</p>
+      <p>Made for Britecore by Chandradeo Arya</p>
     </div>
   </div>
 </template>

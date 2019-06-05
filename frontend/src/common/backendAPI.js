@@ -36,11 +36,3 @@ axios.interceptors.response.use(
     }
     return Promise.reject(error.response.data)
   })
-
-export function base () {
-  return 'http://' + window.location.hostname + ':8000/'
-}
-
-export function UserProfile (userID) {
-  return axios.get(base() + 'users/' + userID + '/')
-}

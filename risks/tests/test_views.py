@@ -9,7 +9,7 @@ from rest_framework.test import APIClient
 
 
 # initialize the APIClient app
-user = User.objects.get(username='admin')
+user = User.objects.get(username='arya')
 client = APIClient()
 client.force_authenticate(user=user)
 
@@ -42,21 +42,19 @@ class GetAllFieldsTest(TestCase):
         date1 = Date.objects.get(value='2017-10-29T16:29:08.175Z')
         number1 = Number.objects.get(value=1)
         enum1 = Enum.objects.get(value='age')
-        Field.objects.create(name='Field 1', value=text1, risk_id=risk.id)
-        Field.objects.create(name='Field 2', value=date1, risk_id=risk.id)
-        Field.objects.create(name='Field 3', value=number1, risk_id=risk2.id)
-        Field.objects.create(name='Field 4', value=enum1, risk_id=risk2.id)
+        Field.objects.create(name='Field risk 1', value=text1, risk_id=risk.id)
+        Field.objects.create(name='Field risk 2', value=number1, risk_id=risk2.id)
 
 
     def test_get_all_fields(self):
         risk = Risk.objects.get(name='New Risk 1')
         # get API response
         response = client.get('/fields/')
-        self.assertEqual(len(response.data), 4)
+        self.assertEqual(len(response.data), 2)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         #test that you can only get fields for specific risks
         response = client.get('/fields/risk/'+ str(risk.id) +'/')
-        self.assertEqual(len(response.data), 2)
+        self.assertEqual(len(response.data), 1)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
@@ -65,7 +63,6 @@ class GetSingleRiskTest(TestCase):
 
     def setUp(self):
         self.risk1 = Risk.objects.create(name='New Risk 1', description='New Risk 1 description')
-        self.risk2 = Risk.objects.create(name='New Risk 2', description='New Risk 2 description')
 
     def test_get_valid_single_risk(self):
         response = client.get('/risks/'+str(self.risk1.id)+'/')
@@ -73,7 +70,7 @@ class GetSingleRiskTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_invalid_single_risk(self):
-        response = client.get('/risks/30/')
+        response = client.get('/risks/1000/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
 
@@ -190,7 +187,6 @@ class UpdateSingleFieldTest(TestCase):
         self.text1 = Text.objects.create(value='Text 1')
         self.number1 = Number.objects.create(value=5)
         self.field1 = Field.objects.create(name='Field 1', value=self.text1, risk_id=8)
-        self.field2 = Field.objects.create(name='Field 2', value=self.number1, risk_id=9)
 
         self.payload = {
             'name': 'Field updated 1',
@@ -213,14 +209,13 @@ class DeleteSingleRiskTest(TestCase):
 
     def setUp(self):
         self.risk1 = Risk.objects.create(name='New Risk 1', description='New Risk 1 description')
-        self.risk2 = Risk.objects.create(name='New Risk 2', description='New Risk 2 description')
 
     def test_valid_delete_risk(self):
         response = client.delete('/risks/'+ str(self.risk1.id) + '/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_invalid_delete_risk(self):
-        response = client.delete('/risks/30/')
+        response = client.delete('/risks/100/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
 class DeleteSingleFieldTest(TestCase):
@@ -230,12 +225,11 @@ class DeleteSingleFieldTest(TestCase):
         self.text1 = Text.objects.create(value='Text 1')
         self.number1 = Number.objects.create(value=5)
         self.field1 = Field.objects.create(name='Field 1', value=self.text1, risk_id=8)
-        self.field2 = Field.objects.create(name='Field 2', value=self.number1, risk_id=9)
 
     def test_valid_delete_field(self):
         response = client.delete('/fields/'+ str(self.field1.id) + '/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_invalid_delete_field(self):
-        response = client.delete('/fields/30/')
+        response = client.delete('/fields/100/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)

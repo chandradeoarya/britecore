@@ -3,14 +3,14 @@ export default [
   {
     name: 'name',
     sortField: 'name',
-    title: '<span class="ui teal">Name</span>',
+    title: '<span class="ui teal">Field Name</span>',
     titleClass: 'center aligned',
     dataClass: 'left aligned'
   },
   {
     name: 'value',
     sortField: 'value',
-    title: '<span class="ui teal">Value</span>',
+    title: '<span class="ui teal">Field Value</span>',
     titleClass: 'center aligned',
     dataClass: 'left aligned'
   },

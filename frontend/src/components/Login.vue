@@ -48,7 +48,7 @@ export default {
       this.$store.dispatch(types.LOGIN, {
         credential: credential,
         redirect: redirect
-      }).catch((e) => { this.error = 'Unable to log in with provided credentials.' })
+      }).catch((e) => { this.error = 'credentials error.' })
     }
   }
 }

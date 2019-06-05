@@ -7,7 +7,7 @@ import router from '../router'
 import VueResource from 'vue-resource'
 
 const debug = process.env.NODE_EVN !== 'production'
-const API_URL = 'http://localhost:8000/'
+const API_URL = process.env.ROOT_API || 'http://localhost:8000/'
 const RISK_URL = API_URL + 'risks/'
 const FIELD_URL = API_URL + 'fields/'
 const LOGIN_URL = API_URL + 'api-token-auth/'

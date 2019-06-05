@@ -1,7 +1,7 @@
 {
-  "name": "my-vue-app",
+  "name": "Britecore_flexy_insurance",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Britecore flexy insurance for any kind of data model",
   "author": "chandradeoarya <chandradeoaryaarya@gmail.com>",
   "private": true,
   "scripts": {
