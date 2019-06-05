@@ -15,9 +15,6 @@
           <ul class="nav navbar-nav navbar-right" v-if="token">
             <li><router-link class="item" to="/logout">Log out</router-link></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right" v-else>
-            <li><router-link class="item" to="login">Login</router-link></li>
-          </ul>
         </div>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
