@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  Britecore flexy insurance for any kind of data model
+  [Britecore flexy insurance for any kind of data model] (http://ec2-18-191-84-229.us-east-2.compute.amazonaws.com/)
 </p>
 
 ## Table of Contents
@@ -46,7 +46,7 @@ An entity relationship diagram, which depicts the tables and their relationship 
 
 ## Features
 
-A few of the things you can do with GitPoint:
+A few of the things you can do with Britecore flexy insurance:
 
 * Handle all requests by axios
 * JWT based authentication
